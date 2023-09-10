@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <title>Project Registration</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='./css/style.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='./css/login.css')}}" />
+</head>
+<body>
+<div class="navigation-wrap bg-light start-header start-style">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <a
+                class="navbar-brand"
+                href="/"
+                target="_blank"
+                ><h1><i class="fa fa-home"></i>PROPERTY MANAGEMENT</h1></a>
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto py-4 py-md-0">
+
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      data-toggle="dropdown"
+                      href="#"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      ><h6>Profile</h6></a
+                    >
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item"><h6>{{username}}</h6></a>
+                      <a class="dropdown-item"><h6>{{email1}}</h6></a>
+                      <a class="dropdown-item" href="{{ url_for('logout') }}"><h6>Logout</h6></a>
+                    </div>
+                  </li>
+
+
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                        <a class="nav-link" href="/dashboard"><h6>Dashboard</h6></a>
+                     </li>
+                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                        <a class="nav-link" href="/search/"><h6>Search</h6></a>
+                    </li>
+
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 order-md-2 ">
+              <br><br><br><img src="{{url_for('static', filename='./images/bgprojet.png')}}" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-6 contents">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div class="mb-4">
+                  <h3><strong>Project Registration</strong></h3>
+                  <p class="mb-4">{{msg}}</p>
+                </div>
+
+                <form action="{{ url_for('projectreg') }}" method="post"  enctype="multipart/form-data">
+
+                  <div class="form-group first">
+                    <label for="name">Project name</label>
+
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  class="form-control"
+                />
+                  </div>
+
+                <div class="form-group first">
+                    <label for="Address">Address</label>
+
+                    <input
+                  id="Address"
+                  type="text"
+                  name="Address"
+                  required
+                  class="form-control"
+                />
+                  </div>
+
+
+                    <div class="row">
+                <div class="form-group first col-md-6 col-sm-12">
+
+                    <label for="City">City</label>
+
+                    <input
+                  id="City"
+                  type="text"
+                  name="City"
+                  required
+                  class="form-control"
+                />
+                  </div>
+
+                <div class="form-group last col-md-6 col-sm-12">
+
+                    <label for="Pincode">Pincode</label>
+                <input
+                  id="Pincode"
+                  type="number"
+                  name="Pincode"
+                  required
+                  class="form-control"
+                />
+                  </div>
+                </div>
+
+                <div class="row">
+                <div class="form-group first col-md-6 col-sm-12">
+
+                    <label for="State">State</label>
+
+                    <input
+                  id="State"
+                  type="text"
+                  name="State"
+                  required
+                  class="form-control"
+                />
+                  </div>
+
+                  <div class="form-group last col-md-6 col-sm-12">
+
+                    <label for="Country">Country</label>
+
+                    <input
+                  id="Country"
+                  type="text"
+                  name="Country"
+                  required
+                  class="form-control"
+                />
+                  </div>
+                </div>
+
+
+                <!-- Flattype -->
+                <div class="row">
+                  <div class="form-group last col-12">
+                      <h4 style="color: #000; font-size: 12px;display: block; margin-bottom: 0;">Flat Types</h4>
+                      <div class="form-check form-check-inline">
+
+                      <input class="form-check-input" type="checkbox" name="flattype" value="1BHK(starting from 20 lac)">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">1BHK(starting from 20 lac)</h4>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+
+                        <input class="form-check-input" type="checkbox" name="flattype" value="2BHK(starting from 35 lac)">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">2BHK(starting from 35 lac)</h4>
+                    </div>
+                    <div class="form-check form-check-inline">
+
+                        <input class="form-check-input" type="checkbox" name="flattype" value="3BHK(starting from 60 lac)">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">3BHK(starting from 60 lac)</h4>
+                    </div>
+                    <div class="form-check form-check-inline ">
+
+                      <input class="form-check-input" type="checkbox" name="flattype" value="4BHK(starting from 80 lac)">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">4BHK(starting from 80 lac)</h4>
+                    </div>
+                    <div class="form-check form-check-inline">
+
+                      <input class="form-check-input" type="checkbox" name="flattype" value="Others">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Others</h4>
+                    </div>
+                  </div>
+                </div>
+
+                    <!-- Availability -->
+                <div class="row">
+                  <div class="form-group col-12">
+                     <h4 style="color: #000; font-size: 12px;display: block; margin-bottom: 0;">Available</h4>
+                      <div class="form-check form-check-inline">
+
+                        <input class="form-check-input" type="radio" name="Availability" id="vacant" value="Yes">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Yes</h4>
+                    </div>
+                     <div class="form-check form-check-inline">
+
+                      <input class="form-check-input" type="radio" name="Availability" id="occupied" value="No">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">No</h4>
+                  </div>
+                </div>
+                </div>
+
+                <!-- Features -->
+                <div class="row">
+                  <div class="form-group last col-12">
+                      <h4 style="color: #000; font-size: 12px;display: block; margin-bottom: 0;">Features(Near to)</h4>
+                      <div class="form-check form-check-inline col-6">
+
+                          <input class="form-check-input" type="checkbox" name="features" value="Hospital">
+                            <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Hospital</h4>
+                      </div>
+                      <div class="form-check form-check-inline">
+
+                          <input class="form-check-input" type="checkbox" name="features" value="Mall">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Mall</h4>
+                    </div>
+
+                     <div class="form-check form-check-inline col-6">
+
+                      <input class="form-check-input" type="checkbox" name="features" value="School">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">School</h4>
+                    </div>
+
+                  <div class="form-check form-check-inline ">
+
+                      <input class="form-check-input" type="checkbox" name="features" value="Market">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Market</h4>
+                    </div>
+                    <div class="form-check form-check-inline col-6">
+
+                        <input class="form-check-input" type="checkbox" name="features" value="Park">
+                       <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Park</h4>
+                    </div>
+
+                    <div class="form-check form-check-inline ">
+
+                        <input class="form-check-input" type="checkbox" name="features" value="Airport">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Airport</h4>
+                    </div>
+                    <div class="form-check form-check-inline col-6">
+
+                        <input class="form-check-input" type="checkbox" name="features" value="Others">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Others</h4>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                    <!-- Facilities -->
+                <div class="row">
+                  <div class="form-group last col-12">
+                      <h4 style="color: #000; font-size: 12px;display: block; margin-bottom: 0;">Top Facilities</h4>
+                      <div class="form-check form-check-inline col-6">
+
+                          <input class="form-check-input" type="checkbox" name="Facilities" value="Yoga Area">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Yoga Area</h4>
+                    </div>
+                      <div class="form-check form-check-inline">
+
+                          <input class="form-check-input" type="checkbox" name="Facilities" value="Indoor Games">
+                        <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Indoor Games</h4>
+                    </div>
+                    <div class="form-check form-check-inline col-6">
+
+                        <input class="form-check-input" type="checkbox" name="Facilities" value="Jogging Track">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Jogging Track</h4>
+                    </div>
+                    <div class="form-check form-check-inline ">
+
+                        <input class="form-check-input" type="checkbox" name="Facilities" value="Club House">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Club House</h4>
+                    </div>
+                    <div class="form-check form-check-inline col-6">
+
+                        <input class="form-check-input" type="checkbox" name="Facilities" value="Swimming Pool">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Swimming Pool</h4>
+                    </div>
+
+                    <div class="form-check form-check-inline ">
+
+                        <input class="form-check-input" type="checkbox" name="Facilities" value="Gym">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Gym</h4>
+                    </div>
+                    <div class="form-check form-check-inline col-6">
+
+                        <input class="form-check-input" type="checkbox" name="Facilities" value="Others">
+                      <h4 style="font-size: 12px;display: block; margin-bottom: 0;">Others</h4>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group first col-12">
+                       <label for="Description">Description</label>
+                        <input
+                      id="Description"
+                      type="text"
+                      name="Description"
+                      required
+                      class="form-control"
+                    />
+                      </div>
+                </div>
+
+                <div class="form-group">
+
+                    <input style="border-bottom: none;"
+                  id="file"
+                  type="file"
+                  name="file"
+                   required
+                />
+                </div>
+
+
+
+                  <input type="submit" value="Register Project" class="btn text-white btn-block btn-success">
+
+                </form>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+    <script src="{{url_for('static', filename='./js/script.js')}}"></script>
+    <script src="{{url_for('static', filename='./js/login.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+ </body>
+</html>

@@ -3,6 +3,19 @@
 The **Property Management** website is designed to provide the facility to a user to buy or sell/rent his properties
 such as apartments and rooms also to add and apply for projects.
 
+
+ # For Registration Of Properties
+   - ![preview](https://github.com/Rahul20je0748/Property-management-system/blob/main/preview1.gif)
+
+-
+
+
+
+# For Applying Properties
+
+   -![preview](https://github.com/Rahul20je0748/Property-management-system/blob/main/preview2.gif)
+
+
 ## Instructions For Project Setup
 - **Step 1.**
 Create new folder and open git bash inside that folder write command-
@@ -70,6 +83,3 @@ git clone https://github.com/Rahul20je07478/Property-Management-System.git
     pip install -r requirements.txt
     ```
    - Now run the main.py file and click on the localhost link of the project or go to http://127.0.0.1:5000/ to see  the project.
-   - ![preview](https://github.com/Rahul20je0748/Property-management-system/blob/main/preview1.gif)
-
-   -![preview](https://github.com/Rahul20je0748/Property-management-system/blob/main/preview2.gif)

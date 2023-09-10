@@ -13,7 +13,12 @@ such as apartments and rooms also to add and apply for projects.
 
 # For Applying Properties
 
-   -![preview](https://github.com/Rahul20je0748/Property-management-system/blob/main/preview2.gif)
+  -![preview](https://github.com/Rahul20je0748/Property-management-system/blob/main/preview2.gif)
+
+
+ # Data in MySQL
+ -![image](https://github.com/Rahul20je0748/Property-Management-system/blob/main/sql%201.jpg)
+ -![image](https://github.com/Rahul20je0748/Property-Management-system/blob/main/sql%202.jpg)
 
 
 ## Instructions For Project Setup
